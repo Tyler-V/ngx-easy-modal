@@ -2,21 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { DynamicComponent } from './dynamic/dynamic.component';
-import { EasyModalService } from './easy-modal/easy-modal.service';
 import { EasyModalComponent } from './easy-modal/easy-modal.component';
+import { EasyModalService } from './easy-modal/easy-modal.service';
+import { DemoModalComponent } from './demo-modal/demo-modal.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DynamicComponent,
-    EasyModalComponent
-  ],
   imports: [
     BrowserModule
   ],
+  declarations: [
+    AppComponent,
+    EasyModalComponent,
+    DemoModalComponent
+  ],
   entryComponents: [
-    DynamicComponent
+    EasyModalComponent
   ],
   providers: [
     EasyModalService

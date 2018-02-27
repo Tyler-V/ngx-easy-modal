@@ -1,25 +1,24 @@
-import {
-  Injectable,
-  Injector,
-  ComponentFactoryResolver,
-  EmbeddedViewRef,
-  ApplicationRef,
-  ChangeDetectorRef
-} from '@angular/core';
+import { Injectable, ComponentFactoryResolver, ApplicationRef, Injector, EmbeddedViewRef, TemplateRef } from '@angular/core';
+import { EasyModalComponent } from './easy-modal.component';
 
 @Injectable()
 export class EasyModalService {
 
   constructor(
     private cfr: ComponentFactoryResolver,
-    private appRef: ApplicationRef,
-    private injector: Injector) { }
+    private injector: Injector,
+    private appRef: ApplicationRef) { }
 
-  open(component: any) {
-    // 1. Create a component reference from the component 
+  open(template: TemplateRef<any>) {
+    const componentFactory = this.cfr.resolveComponentFactory(EasyModalComponent);
+
+    // 1. Create a component reference from the component
     const componentRef = this.cfr
-      .resolveComponentFactory(component)
+      .resolveComponentFactory(EasyModalComponent)
       .create(this.injector);
+
+    const instance: EasyModalComponent = componentRef.instance as EasyModalComponent;
+    instance.template = template;
 
     // 2. Attach component to the appRef so that it's inside the ng component tree
     this.appRef.attachView(componentRef.hostView);

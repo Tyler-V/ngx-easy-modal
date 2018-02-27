@@ -1,1 +1,3 @@
-<button (click)="open()">Open</button>
+<div class="container">
+  <ng-container *ngIf="template" [ngTemplateOutlet]="template"></ng-container>
+</div>
