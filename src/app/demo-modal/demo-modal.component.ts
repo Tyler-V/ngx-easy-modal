@@ -10,17 +10,11 @@ export class DemoModalComponent implements OnInit {
 
   @ViewChild('template') template;
 
-  public text = 'Hello I am a dynamic template generated in a dynamic component!';
-
   constructor(public modalService: EasyModalService) { }
 
   ngOnInit() { }
 
   open() {
     this.modalService.open(this.template);
-  }
-
-  onClick() {
-    console.log('Click!');
   }
 }
