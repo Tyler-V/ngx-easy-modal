@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { EasyModalComponent } from './easy-modal/easy-modal.component';
 import { EasyModalService } from './easy-modal/easy-modal.service';
 import { DemoModalComponent } from './demo-modal/demo-modal.component';
+import { EasyModalInstanceService } from './easy-modal/easy-modal-instance.service';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { DemoModalComponent } from './demo-modal/demo-modal.component';
     EasyModalComponent
   ],
   providers: [
-    EasyModalService
+    EasyModalService,
+    EasyModalInstanceService
   ],
   bootstrap: [AppComponent]
 })

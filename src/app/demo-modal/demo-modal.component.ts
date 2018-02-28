@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { EasyModalService } from '../easy-modal/easy-modal.service';
 
 @Component({
@@ -8,13 +8,17 @@ import { EasyModalService } from '../easy-modal/easy-modal.service';
 })
 export class DemoModalComponent implements OnInit {
 
-  @ViewChild('template') template;
+  @ViewChild('template') template: TemplateRef<any>;
 
   constructor(public modalService: EasyModalService) { }
 
   ngOnInit() { }
 
   open() {
-    this.modalService.open(this.template);
+    this.modalService.create(this.template);
+  }
+
+  close() {
+    this.modalService.destroy();
   }
 }

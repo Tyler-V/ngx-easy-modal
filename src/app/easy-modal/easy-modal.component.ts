@@ -1,16 +1,24 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, TemplateRef, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { EasyModalService } from './easy-modal.service';
+import { EasyModalInstanceService } from './easy-modal-instance.service';
 
 @Component({
   selector: 'ez-modal',
   templateUrl: './easy-modal.component.html',
-  styleUrls: ['./easy-modal.component.scss']
+  styleUrls: ['./easy-modal.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EasyModalComponent implements OnInit {
+export class EasyModalComponent {
 
-  @Input() template: TemplateRef<any>;
+  public componentRef: any;
+  public template: TemplateRef<any>;
+  public height = 300;
+  public width = 500;
 
-  constructor() { }
+  constructor(private modalInstanceService: EasyModalInstanceService) { }
 
-  ngOnInit() { }
-
+  close() {
+    this.modalInstanceService.closeEvent.emit();
+  }
 }
