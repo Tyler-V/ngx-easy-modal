@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { EasyModalService } from '../easy-modal/easy-modal.service';
 
 @Component({
@@ -6,13 +6,11 @@ import { EasyModalService } from '../easy-modal/easy-modal.service';
   templateUrl: './demo-modal.component.html',
   styleUrls: ['./demo-modal.component.scss']
 })
-export class DemoModalComponent implements OnInit {
+export class DemoModalComponent {
 
   @ViewChild('template') template: TemplateRef<any>;
 
   constructor(public modalService: EasyModalService) { }
-
-  ngOnInit() { }
 
   open() {
     this.modalService.create(this.template);
