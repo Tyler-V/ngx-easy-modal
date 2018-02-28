@@ -1,4 +1,4 @@
 <div class="overlay" (click)="close()"></div>
-<div class="modal" [style.width.px]="width" [style.height.px]="height" [style.left]="'calc(50% - ' + width / 2 + 'px)'" [style.top]="'calc(50% - ' + height / 2 + 'px)'">
+<div class="modal" [style.width.px]="width" [style.height.px]="height">
   <ng-container *ngIf="template" [ngTemplateOutlet]="template"></ng-container>
 </div>
