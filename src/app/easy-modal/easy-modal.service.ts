@@ -30,7 +30,6 @@ export class EasyModalService implements OnDestroy {
       .create(this.injector);
 
     const instance: EasyModalComponent = this._componentRef.instance as EasyModalComponent;
-    instance.componentRef = this._componentRef;
     instance.template = template;
 
     this.appRef.attachView(this._componentRef.hostView);
