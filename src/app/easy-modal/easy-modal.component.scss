@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 $overlay-opacity: .75;
-$header-height: 40;
-$content-height: calc(100% - ($header-height + $footer-height));
-$footer-height: 40;
+$content-height: calc(100% - ($header-height+$footer-height));
 .overlay {
   position: fixed;
   top: 0;
@@ -24,19 +24,31 @@ $footer-height: 40;
   left: 0;
   bottom: 0;
   right: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
   .header {
     width: 100%;
     height: 50px;
+    line-height: 50px;
     background-color: tomato;
-    .close {
+    border-radius: 10px 10px 0 0;
+    .title {
+      float: left;
+      color: white;
+      font-size: 18px;
+    }
+    button {
       float: right;
-      margin-right: 5px;
+      height: 100%;
+      margin-right: 10px;
+      color: white;
     }
   }
   .body {
     width: 100%;
     height: calc(100% - 100px);
     overflow-y: auto;
+    background-color: white;
     .content {
       padding: 20px;
     }
@@ -46,10 +58,19 @@ $footer-height: 40;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 30px;
     background-color: tomato;
+    display: flex;
+    padding: 10px 0;
+    flex-direction: row-reverse;
+    border-radius: 0 0 10px 10px;
+    button {
+      height: 30px;
+      line-height: 30px;
+      margin-right: 20px;
+    }
   }
-  .button {
+  .icon {
     height: 100%;
     width: 50px;
     display: flex;
