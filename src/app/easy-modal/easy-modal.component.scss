@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 $overlay-opacity: .75;
-$content-height: calc(100% - ($header-height+$footer-height));
 .overlay {
   position: fixed;
   top: 0;
