@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { Component, TemplateRef, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { EasyModalService } from './easy-modal.service';
 import { EasyModalInstanceService } from './easy-modal-instance.service';
 
@@ -11,14 +11,12 @@ import { EasyModalInstanceService } from './easy-modal-instance.service';
 export class EasyModalComponent {
 
   public template: TemplateRef<any>;
-  public height = 300;
-  public width = 500;
 
   constructor(
     private easyModalInstanceService: EasyModalInstanceService
   ) { }
 
-  close() {
+  destroy() {
     this.easyModalInstanceService.destroy();
   }
 }

@@ -14,7 +14,6 @@ export class EasyModalInstanceService {
   destroy() {
     if (this._componentRef) {
       this._componentRef.destroy();
-      this._componentRef = null;
     }
   }
 
