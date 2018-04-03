@@ -1,10 +1,28 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { ComponentRef } from '@angular/core';
+import { EasyModalComponent } from './easy-modal.component';
 
-@Injectable()
 export class EasyModalInstanceService {
 
-  public closeEvent = new EventEmitter<any>();
+  /**
+   * Used to make sure there is exactly one instance of Modal
+   */
+  private _componentRef: ComponentRef<EasyModalComponent>;
 
-  constructor() { }
+  /**
+   * Closes existing modal dialog
+   */
+  destroy() {
+    if (this._componentRef) {
+      this._componentRef.destroy();
+      this._componentRef = null;
+    }
+  }
 
+  /**
+   * Save component ref destroy
+   * @param componentRef
+   */
+  setComponentRef(componentRef: ComponentRef<EasyModalComponent>) {
+    this._componentRef = componentRef;
+  }
 }

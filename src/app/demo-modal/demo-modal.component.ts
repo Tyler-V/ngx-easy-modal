@@ -13,10 +13,10 @@ export class DemoModalComponent {
   constructor(public modalService: EasyModalService) { }
 
   open() {
-    this.modalService.create(this.template);
+    this.modalService.open(this.template);
   }
 
   close() {
-    this.modalService.destroy();
+    this.modalService.close();
   }
 }

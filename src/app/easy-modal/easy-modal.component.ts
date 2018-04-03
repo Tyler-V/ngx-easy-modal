@@ -14,9 +14,11 @@ export class EasyModalComponent {
   public height = 300;
   public width = 500;
 
-  constructor(private modalInstanceService: EasyModalInstanceService) { }
+  constructor(
+    private easyModalInstanceService: EasyModalInstanceService
+  ) { }
 
   close() {
-    this.modalInstanceService.closeEvent.emit();
+    this.easyModalInstanceService.destroy();
   }
 }
